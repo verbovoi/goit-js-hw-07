@@ -1,3 +1,8 @@
+.main-page {
+    display: block;
+    margin: 20px;
+}
+
 ul {
     list-style: none;
     ;
@@ -14,4 +19,17 @@ ul {
 
     border: orange 5px solid;
     border-radius: 20px;
+}
+
+
+#validation-input {
+    border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+    border-color: #4caf50;
+}
+
+#validation-input.invalid {
+    border-color: #f44336;
 }
