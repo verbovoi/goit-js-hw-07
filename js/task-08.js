@@ -5,8 +5,8 @@ const boxEl = document.querySelector('#boxes');
 
 
 const createBoxes = function (amount) {
+    const arrayBoxes = [];
     amount = Number(inputEl.value);
-    console.log(amount);
     let boxSizes = 30;
 
     for (let i = 1; i <= amount; i++) {
@@ -14,13 +14,13 @@ const createBoxes = function (amount) {
         newBoxEl.style.width = `${boxSizes}px`;
         newBoxEl.style.height = `${boxSizes}px`;
         newBoxEl.style.backgroundColor = '#' + (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase();
-        boxEl.appendChild(newBoxEl);
         boxSizes += 10;
+        arrayBoxes.push(newBoxEl);
     }
+    boxEl.append(...arrayBoxes);
 }
 
 const destroyBoxes = function () {
-    console.log('click');
     boxEl.innerHTML = '';
 
 }

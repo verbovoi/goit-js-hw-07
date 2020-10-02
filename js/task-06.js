@@ -7,11 +7,11 @@ const validation = function (event) {
     const inputValue = event.target.value.length;
 
     if (inputValue !== Number(this.dataset.length)) {
-        const addClass = this.classList.contains('valid') ? this.classList.replace('valid', 'invalid') :
+        return this.classList.contains('valid') ? this.classList.replace('valid', 'invalid') :
             this.classList.add('invalid');
 
     } else {
-        const addClass = this.classList.contains('invalid') ? this.classList.replace('invalid', 'valid') :
+        return this.classList.contains('invalid') ? this.classList.replace('invalid', 'valid') :
             this.classList.add('valid');
     }
 

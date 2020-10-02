@@ -9,14 +9,18 @@ const ingredients = [
 
 
 const addItem = array => {
+    const arrItems = [];
+    const listEl = document.querySelector('#ingredients');
+
     array.forEach(element => {
-        const listEl = document.querySelector('#ingredients');
         const itemEl = document.createElement('li');
 
         itemEl.textContent = element;
-        console.log(itemEl);
-        listEl.appendChild(itemEl);
+        arrItems.push(itemEl);
     });
+
+    listEl.append(...arrItems);
+
 }
 
 addItem(ingredients);

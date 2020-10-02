@@ -13,21 +13,23 @@ const images = [{
 ];
 
 const addImage = imageArr => {
+    const arrayPictures = [];
     const listEl = document.querySelector('#gallery');
 
     imageArr.forEach(({
         url,
         alt
     }) => {
-        listEl.insertAdjacentHTML('afterbegin', '<li><img></li>');
-        const imageEl = listEl.querySelector('img');
+        const liEl = document.createElement('li');
+        const imageEl = document.createElement('img');
         imageEl.classList.add('image');
         imageEl.src = url;
         imageEl.alt = alt;
+        liEl.append(imageEl);
 
+        arrayPictures.push(liEl);
     })
-
-    console.log(listEl);
+    listEl.append(...arrayPictures);
 }
 
 addImage(images);
